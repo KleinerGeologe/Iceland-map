@@ -1,0 +1,1 @@
+var json_Svartsengi20241120_12 = {"type":"FeatureCollection","name":"Svartsengi20241120_12","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[]}
