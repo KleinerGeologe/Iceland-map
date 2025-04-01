@@ -48,11 +48,12 @@
         <script src="data/Svartsengi20240529_10.js"></script>
         <script src="data/Svartsengi20240910_11.js"></script>
         <script src="data/Svartsengi20241120_12.js"></script>
-        <script src="data/Geldingadalur20210930_13.js"></script>
-        <script src="data/Meradalir20220816_14.js"></script>
-        <script src="data/LitliHrutur20230820_15.js"></script>
-        <script src="data/GossprungureldgosiReykjanesi_16.js"></script>
-        <script src="data/Fissure20250401_17.js"></script>
+        <script src="data/Svartsengi20250401_13.js"></script>
+        <script src="data/Geldingadalur20210930_14.js"></script>
+        <script src="data/Meradalir20220816_15.js"></script>
+        <script src="data/LitliHrutur20230820_16.js"></script>
+        <script src="data/GossprungureldgosiReykjanesi_17.js"></script>
+        <script src="data/Fissure20250401_18.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -68,11 +69,10 @@
                 fillOpacity: 1
               });
             }
-            highlightLayer.openPopup();
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[63.8472804457036,-22.44262899361469],[63.85670506134913,-22.397325945667795]]);
+        }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -195,13 +195,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -284,13 +277,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -345,13 +331,6 @@
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -435,13 +414,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -505,13 +477,6 @@
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -577,13 +542,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -647,13 +605,6 @@
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -719,13 +670,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -789,13 +733,6 @@
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -861,13 +798,6 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
                 },
                 mouseover: highlightFeature,
             });
@@ -924,7 +854,7 @@
         });
         bounds_group.addLayer(layer_Svartsengi20241120_12);
         map.addLayer(layer_Svartsengi20241120_12);
-        function pop_Geldingadalur20210930_13(feature, layer) {
+        function pop_Svartsengi20250401_13(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -932,12 +862,69 @@
                             e.target._eventParents[i].resetStyle(e.target);
                         }
                     }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Svartsengi20250401_13_0() {
+            return {
+                pane: 'pane_Svartsengi20250401_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,104,172,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Svartsengi20250401_13');
+        map.getPane('pane_Svartsengi20250401_13').style.zIndex = 413;
+        map.getPane('pane_Svartsengi20250401_13').style['mix-blend-mode'] = 'multiply';
+        var layer_Svartsengi20250401_13 = new L.geoJson(json_Svartsengi20250401_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Svartsengi20250401_13',
+            layerName: 'layer_Svartsengi20250401_13',
+            pane: 'pane_Svartsengi20250401_13',
+            onEachFeature: pop_Svartsengi20250401_13,
+            style: style_Svartsengi20250401_13_0,
+        });
+        bounds_group.addLayer(layer_Svartsengi20250401_13);
+        map.addLayer(layer_Svartsengi20250401_13);
+        function pop_Geldingadalur20210930_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
                     }
                 },
                 mouseover: highlightFeature,
@@ -969,9 +956,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Geldingadalur20210930_13_0() {
+        function style_Geldingadalur20210930_14_0() {
             return {
-                pane: 'pane_Geldingadalur20210930_13',
+                pane: 'pane_Geldingadalur20210930_14',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -984,34 +971,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Geldingadalur20210930_13');
-        map.getPane('pane_Geldingadalur20210930_13').style.zIndex = 413;
-        map.getPane('pane_Geldingadalur20210930_13').style['mix-blend-mode'] = 'multiply';
-        var layer_Geldingadalur20210930_13 = new L.geoJson(json_Geldingadalur20210930_13, {
+        map.createPane('pane_Geldingadalur20210930_14');
+        map.getPane('pane_Geldingadalur20210930_14').style.zIndex = 414;
+        map.getPane('pane_Geldingadalur20210930_14').style['mix-blend-mode'] = 'multiply';
+        var layer_Geldingadalur20210930_14 = new L.geoJson(json_Geldingadalur20210930_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Geldingadalur20210930_13',
-            layerName: 'layer_Geldingadalur20210930_13',
-            pane: 'pane_Geldingadalur20210930_13',
-            onEachFeature: pop_Geldingadalur20210930_13,
-            style: style_Geldingadalur20210930_13_0,
+            dataVar: 'json_Geldingadalur20210930_14',
+            layerName: 'layer_Geldingadalur20210930_14',
+            pane: 'pane_Geldingadalur20210930_14',
+            onEachFeature: pop_Geldingadalur20210930_14,
+            style: style_Geldingadalur20210930_14_0,
         });
-        bounds_group.addLayer(layer_Geldingadalur20210930_13);
-        map.addLayer(layer_Geldingadalur20210930_13);
-        function pop_Meradalir20220816_14(feature, layer) {
+        bounds_group.addLayer(layer_Geldingadalur20210930_14);
+        map.addLayer(layer_Geldingadalur20210930_14);
+        function pop_Meradalir20220816_15(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1043,9 +1023,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Meradalir20220816_14_0() {
+        function style_Meradalir20220816_15_0() {
             return {
-                pane: 'pane_Meradalir20220816_14',
+                pane: 'pane_Meradalir20220816_15',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1058,34 +1038,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Meradalir20220816_14');
-        map.getPane('pane_Meradalir20220816_14').style.zIndex = 414;
-        map.getPane('pane_Meradalir20220816_14').style['mix-blend-mode'] = 'multiply';
-        var layer_Meradalir20220816_14 = new L.geoJson(json_Meradalir20220816_14, {
+        map.createPane('pane_Meradalir20220816_15');
+        map.getPane('pane_Meradalir20220816_15').style.zIndex = 415;
+        map.getPane('pane_Meradalir20220816_15').style['mix-blend-mode'] = 'multiply';
+        var layer_Meradalir20220816_15 = new L.geoJson(json_Meradalir20220816_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Meradalir20220816_14',
-            layerName: 'layer_Meradalir20220816_14',
-            pane: 'pane_Meradalir20220816_14',
-            onEachFeature: pop_Meradalir20220816_14,
-            style: style_Meradalir20220816_14_0,
+            dataVar: 'json_Meradalir20220816_15',
+            layerName: 'layer_Meradalir20220816_15',
+            pane: 'pane_Meradalir20220816_15',
+            onEachFeature: pop_Meradalir20220816_15,
+            style: style_Meradalir20220816_15_0,
         });
-        bounds_group.addLayer(layer_Meradalir20220816_14);
-        map.addLayer(layer_Meradalir20220816_14);
-        function pop_LitliHrutur20230820_15(feature, layer) {
+        bounds_group.addLayer(layer_Meradalir20220816_15);
+        map.addLayer(layer_Meradalir20220816_15);
+        function pop_LitliHrutur20230820_16(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1117,9 +1090,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_LitliHrutur20230820_15_0() {
+        function style_LitliHrutur20230820_16_0() {
             return {
-                pane: 'pane_LitliHrutur20230820_15',
+                pane: 'pane_LitliHrutur20230820_16',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1132,34 +1105,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LitliHrutur20230820_15');
-        map.getPane('pane_LitliHrutur20230820_15').style.zIndex = 415;
-        map.getPane('pane_LitliHrutur20230820_15').style['mix-blend-mode'] = 'multiply';
-        var layer_LitliHrutur20230820_15 = new L.geoJson(json_LitliHrutur20230820_15, {
+        map.createPane('pane_LitliHrutur20230820_16');
+        map.getPane('pane_LitliHrutur20230820_16').style.zIndex = 416;
+        map.getPane('pane_LitliHrutur20230820_16').style['mix-blend-mode'] = 'multiply';
+        var layer_LitliHrutur20230820_16 = new L.geoJson(json_LitliHrutur20230820_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LitliHrutur20230820_15',
-            layerName: 'layer_LitliHrutur20230820_15',
-            pane: 'pane_LitliHrutur20230820_15',
-            onEachFeature: pop_LitliHrutur20230820_15,
-            style: style_LitliHrutur20230820_15_0,
+            dataVar: 'json_LitliHrutur20230820_16',
+            layerName: 'layer_LitliHrutur20230820_16',
+            pane: 'pane_LitliHrutur20230820_16',
+            onEachFeature: pop_LitliHrutur20230820_16,
+            style: style_LitliHrutur20230820_16_0,
         });
-        bounds_group.addLayer(layer_LitliHrutur20230820_15);
-        map.addLayer(layer_LitliHrutur20230820_15);
-        function pop_GossprungureldgosiReykjanesi_16(feature, layer) {
+        bounds_group.addLayer(layer_LitliHrutur20230820_16);
+        map.addLayer(layer_LitliHrutur20230820_16);
+        function pop_GossprungureldgosiReykjanesi_17(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1185,9 +1151,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_GossprungureldgosiReykjanesi_16_0() {
+        function style_GossprungureldgosiReykjanesi_17_0() {
             return {
-                pane: 'pane_GossprungureldgosiReykjanesi_16',
+                pane: 'pane_GossprungureldgosiReykjanesi_17',
                 opacity: 1,
                 color: 'rgba(219,30,42,1.0)',
                 dashArray: '',
@@ -1198,33 +1164,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_GossprungureldgosiReykjanesi_16');
-        map.getPane('pane_GossprungureldgosiReykjanesi_16').style.zIndex = 416;
-        map.getPane('pane_GossprungureldgosiReykjanesi_16').style['mix-blend-mode'] = 'normal';
-        var layer_GossprungureldgosiReykjanesi_16 = new L.geoJson(json_GossprungureldgosiReykjanesi_16, {
+        map.createPane('pane_GossprungureldgosiReykjanesi_17');
+        map.getPane('pane_GossprungureldgosiReykjanesi_17').style.zIndex = 417;
+        map.getPane('pane_GossprungureldgosiReykjanesi_17').style['mix-blend-mode'] = 'normal';
+        var layer_GossprungureldgosiReykjanesi_17 = new L.geoJson(json_GossprungureldgosiReykjanesi_17, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_GossprungureldgosiReykjanesi_16',
-            layerName: 'layer_GossprungureldgosiReykjanesi_16',
-            pane: 'pane_GossprungureldgosiReykjanesi_16',
-            onEachFeature: pop_GossprungureldgosiReykjanesi_16,
-            style: style_GossprungureldgosiReykjanesi_16_0,
+            dataVar: 'json_GossprungureldgosiReykjanesi_17',
+            layerName: 'layer_GossprungureldgosiReykjanesi_17',
+            pane: 'pane_GossprungureldgosiReykjanesi_17',
+            onEachFeature: pop_GossprungureldgosiReykjanesi_17,
+            style: style_GossprungureldgosiReykjanesi_17_0,
         });
-        bounds_group.addLayer(layer_GossprungureldgosiReykjanesi_16);
-        function pop_Fissure20250401_17(feature, layer) {
+        bounds_group.addLayer(layer_GossprungureldgosiReykjanesi_17);
+        function pop_Fissure20250401_18(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
                         if (typeof e.target._eventParents[i].resetStyle === 'function') {
                             e.target._eventParents[i].resetStyle(e.target);
                         }
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
                     }
                 },
                 mouseover: highlightFeature,
@@ -1241,9 +1200,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Fissure20250401_17_0() {
+        function style_Fissure20250401_18_0() {
             return {
-                pane: 'pane_Fissure20250401_17',
+                pane: 'pane_Fissure20250401_18',
                 opacity: 1,
                 color: 'rgba(179,15,68,1.0)',
                 dashArray: '12.0,6.0',
@@ -1254,24 +1213,24 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Fissure20250401_17');
-        map.getPane('pane_Fissure20250401_17').style.zIndex = 417;
-        map.getPane('pane_Fissure20250401_17').style['mix-blend-mode'] = 'normal';
-        var layer_Fissure20250401_17 = new L.geoJson(json_Fissure20250401_17, {
+        map.createPane('pane_Fissure20250401_18');
+        map.getPane('pane_Fissure20250401_18').style.zIndex = 418;
+        map.getPane('pane_Fissure20250401_18').style['mix-blend-mode'] = 'normal';
+        var layer_Fissure20250401_18 = new L.geoJson(json_Fissure20250401_18, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Fissure20250401_17',
-            layerName: 'layer_Fissure20250401_17',
-            pane: 'pane_Fissure20250401_17',
-            onEachFeature: pop_Fissure20250401_17,
-            style: style_Fissure20250401_17_0,
+            dataVar: 'json_Fissure20250401_18',
+            layerName: 'layer_Fissure20250401_18',
+            pane: 'pane_Fissure20250401_18',
+            onEachFeature: pop_Fissure20250401_18,
+            style: style_Fissure20250401_18_0,
         });
-        bounds_group.addLayer(layer_Fissure20250401_17);
-        map.addLayer(layer_Fissure20250401_17);
-        map.createPane('pane_INSPIREGeographicalNamesgnIceland_18');
-        map.getPane('pane_INSPIREGeographicalNamesgnIceland_18').style.zIndex = 418;
-        var layer_INSPIREGeographicalNamesgnIceland_18 = L.WMS.layer("https://gis.lmi.is/geoserver/wms", "INSPIRE:INSPIRE_GeographicalNames", {
-            pane: 'pane_INSPIREGeographicalNamesgnIceland_18',
+        bounds_group.addLayer(layer_Fissure20250401_18);
+        map.addLayer(layer_Fissure20250401_18);
+        map.createPane('pane_INSPIREGeographicalNamesgnIceland_19');
+        map.getPane('pane_INSPIREGeographicalNamesgnIceland_19').style.zIndex = 419;
+        var layer_INSPIREGeographicalNamesgnIceland_19 = L.WMS.layer("https://gis.lmi.is/geoserver/wms", "INSPIRE:INSPIRE_GeographicalNames", {
+            pane: 'pane_INSPIREGeographicalNamesgnIceland_19',
             format: 'image/png',
             uppercase: true,
             transparent: true,
@@ -1282,7 +1241,7 @@
             identify: false,
             attribution: '',
         });
-        map.addLayer(layer_INSPIREGeographicalNamesgnIceland_18);
+        map.addLayer(layer_INSPIREGeographicalNamesgnIceland_19);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1294,14 +1253,15 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-            {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_18},
-            {label: '<img src="legend/Fissure20250401_17.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_17},
-            {label: '<img src="legend/GossprungureldgosiReykjanesi_16.png" /> Gossprungur, eldgosið á Reykjanesi', layer: layer_GossprungureldgosiReykjanesi_16},
+            {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
+            {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
+            {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Gossprungur, eldgosið á Reykjanesi', layer: layer_GossprungureldgosiReykjanesi_17},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
-            {label: '<img src="legend/LitliHrutur20230820_15.png" /> Litli Hrutur 20230820', layer: layer_LitliHrutur20230820_15},
-            {label: '<img src="legend/Meradalir20220816_14.png" /> Meradalir 20220816', layer: layer_Meradalir20220816_14},
-            {label: '<img src="legend/Geldingadalur20210930_13.png" /> Geldingadalur 20210930', layer: layer_Geldingadalur20210930_13},]},
+            {label: '<img src="legend/LitliHrutur20230820_16.png" /> Litli Hrutur 20230820', layer: layer_LitliHrutur20230820_16},
+            {label: '<img src="legend/Meradalir20220816_15.png" /> Meradalir 20220816', layer: layer_Meradalir20220816_15},
+            {label: '<img src="legend/Geldingadalur20210930_14.png" /> Geldingadalur 20210930', layer: layer_Geldingadalur20210930_14},]},
         {label: '<b>Svartsengi 2023-2024</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/Svartsengi20250401_13.png" /> Svartsengi 2025.04.01', layer: layer_Svartsengi20250401_13},
             {label: '<img src="legend/Svartsengi20241120_12.png" /> Svartsengi 2024.11.20', layer: layer_Svartsengi20241120_12},
             {label: '<img src="legend/Svartsengi20240910_11.png" /> Svartsengi 2024.09.10', layer: layer_Svartsengi20240910_11},
             {label: '<img src="legend/Svartsengi20240529_10.png" /> Svartsengi 2024.05.29', layer: layer_Svartsengi20240529_10},
