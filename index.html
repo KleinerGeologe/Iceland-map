@@ -20,7 +20,7 @@
             margin: 0;
         }
         </style>
-        <title>Iceland eruption series 2023 - 2024</title>
+        <title>Iceland eruption series 2021 - 2025</title>
     </head>
     <body>
         <div id="map">
@@ -52,7 +52,7 @@
         <script src="data/Meradalir20220816_14.js"></script>
         <script src="data/LitliHrutur20230820_15.js"></script>
         <script src="data/GossprungureldgosiReykjanesi_16.js"></script>
-        <script src="data/Fissure01042025_17.js"></script>
+        <script src="data/Fissure20250401_17.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -72,7 +72,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[63.83970962833993,-22.49910732748396],[63.88790563293064,-22.267337236512386]]);
+        }).fitBounds([[63.8472804457036,-22.44262899361469],[63.85670506134913,-22.397325945667795]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -111,7 +111,7 @@
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>Iceland eruption series 2023 - 2024</h2>';
+            this._div.innerHTML = '<h2>Iceland eruption series 2021 - 2025</h2>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'topleft'});
@@ -174,7 +174,6 @@
             identify: false,
             attribution: '',
         });
-        map.addLayer(layer_Bathymetry_1);
         map.createPane('pane_OpenStreetMap_2');
         map.getPane('pane_OpenStreetMap_2').style.zIndex = 402;
         var layer_OpenStreetMap_2 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -806,10 +805,10 @@
                         <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="date start" colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="date end" colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1212,7 +1211,7 @@
             style: style_GossprungureldgosiReykjanesi_16_0,
         });
         bounds_group.addLayer(layer_GossprungureldgosiReykjanesi_16);
-        function pop_Fissure01042025_17(feature, layer) {
+        function pop_Fissure20250401_17(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1242,9 +1241,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Fissure01042025_17_0() {
+        function style_Fissure20250401_17_0() {
             return {
-                pane: 'pane_Fissure01042025_17',
+                pane: 'pane_Fissure20250401_17',
                 opacity: 1,
                 color: 'rgba(179,15,68,1.0)',
                 dashArray: '12.0,6.0',
@@ -1255,20 +1254,20 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Fissure01042025_17');
-        map.getPane('pane_Fissure01042025_17').style.zIndex = 417;
-        map.getPane('pane_Fissure01042025_17').style['mix-blend-mode'] = 'normal';
-        var layer_Fissure01042025_17 = new L.geoJson(json_Fissure01042025_17, {
+        map.createPane('pane_Fissure20250401_17');
+        map.getPane('pane_Fissure20250401_17').style.zIndex = 417;
+        map.getPane('pane_Fissure20250401_17').style['mix-blend-mode'] = 'normal';
+        var layer_Fissure20250401_17 = new L.geoJson(json_Fissure20250401_17, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Fissure01042025_17',
-            layerName: 'layer_Fissure01042025_17',
-            pane: 'pane_Fissure01042025_17',
-            onEachFeature: pop_Fissure01042025_17,
-            style: style_Fissure01042025_17_0,
+            dataVar: 'json_Fissure20250401_17',
+            layerName: 'layer_Fissure20250401_17',
+            pane: 'pane_Fissure20250401_17',
+            onEachFeature: pop_Fissure20250401_17,
+            style: style_Fissure20250401_17_0,
         });
-        bounds_group.addLayer(layer_Fissure01042025_17);
-        map.addLayer(layer_Fissure01042025_17);
+        bounds_group.addLayer(layer_Fissure20250401_17);
+        map.addLayer(layer_Fissure20250401_17);
         map.createPane('pane_INSPIREGeographicalNamesgnIceland_18');
         map.getPane('pane_INSPIREGeographicalNamesgnIceland_18').style.zIndex = 418;
         var layer_INSPIREGeographicalNamesgnIceland_18 = L.WMS.layer("https://gis.lmi.is/geoserver/wms", "INSPIRE:INSPIRE_GeographicalNames", {
@@ -1296,7 +1295,7 @@
         .title += 'Search for a place';
         var overlaysTree = [
             {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_18},
-            {label: '<img src="legend/Fissure01042025_17.png" /> Fissure 01042025', layer: layer_Fissure01042025_17},
+            {label: '<img src="legend/Fissure20250401_17.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_17},
             {label: '<img src="legend/GossprungureldgosiReykjanesi_16.png" /> Gossprungur, eldgosið á Reykjanesi', layer: layer_GossprungureldgosiReykjanesi_16},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/LitliHrutur20230820_15.png" /> Litli Hrutur 20230820', layer: layer_LitliHrutur20230820_15},
@@ -1316,7 +1315,7 @@
             {label: 'Postglacial lavas<br /><table><tr><td style="text-align: center;"><img src="legend/Postglaciallavas_3_Prehistoriclavas0.png" /></td><td>Pre-historic lavas</td></tr><tr><td style="text-align: center;"><img src="legend/Postglaciallavas_3_Historiclavas1.png" /></td><td>Historic lavas</td></tr></table>', layer: layer_Postglaciallavas_3},]},
             {label: "OpenStreetMap", layer: layer_OpenStreetMap_2},
             {label: "Bathymetry", layer: layer_Bathymetry_1},
-            {label: "IslandsDEM", layer: layer_IslandsDEM_0},]
+            {label: "IslandsDEM", layer: layer_IslandsDEM_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
