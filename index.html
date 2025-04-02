@@ -38,6 +38,7 @@
         <script src="js/leaflet.wms.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
+        <script src="js/esri-leaflet.js"></script>
         <script src="data/Postglaciallavas_3.js"></script>
         <script src="data/Postglacialfissurescraters_4.js"></script>
         <script src="data/FaultsReykjanes_5.js"></script>
@@ -54,6 +55,8 @@
         <script src="data/LitliHrutur20230820_16.js"></script>
         <script src="data/GossprungureldgosiReykjanesi_17.js"></script>
         <script src="data/Fissure20250401_18.js"></script>
+
+
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -1248,11 +1251,51 @@
             text: 'Search',
             title: 'Testing'
         }).addTo(map);
+
+
+var getEQColor = function(d) {
+      return  d < 2.5  ? '#D80707' :
+              d < 5 ? '#E0F13A' :
+              d < 10 ? '#49DA7F' :
+              d < 20 ? '#3507FF' :
+                       '#07075F'
+    }
+ 
+
+    var icelandEQ6 = L.esri.featureLayer({
+      url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/0',
+      where:  "mag > 0",
+       
+    
+      pointToLayer: function(geojson, latlng){
+      return L.circle(latlng, 200*(geojson.properties.mag), {
+            fillOpacity: 0.4,
+            fillColor:getEQColor(geojson.properties.depth),
+            color: getEQColor(geojson.properties.depth),
+            opacity: 1,
+          
+}).bindPopup(  'date: '
+              + geojson.properties.datetime
+              + '<br>'
+              + 'time elapsed: '
+              + geojson.properties.time_elapsed
+              + 'h'
+              + '<br>'  
+              + 'depth: '
+              + geojson.properties.depth
+              + '<br>'
+              + 'mag: '
+              + geojson.properties.mag
+            );  
+    }
+    }).addTo(map)
+
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
+            {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h', layer: icelandEQ6},
             {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
             {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Gossprungur, eldgosið á Reykjanesi', layer: layer_GossprungureldgosiReykjanesi_17},
@@ -1287,6 +1330,10 @@
         });
         lay.addTo(map);
         setBounds();
+
+
+
+
         </script>
     </body>
 </html>
