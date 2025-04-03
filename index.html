@@ -19,6 +19,18 @@
             padding: 0;
             margin: 0;
         }
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
         </style>
         <title>Iceland eruption series 2021 - 2025</title>
     </head>
@@ -1253,13 +1265,26 @@
         }).addTo(map);
 
 
+
 var getEQColor = function(d) {
-      return  d < 2.5  ? '#D80707' :
+      return  d < 2.5 ? '#D80707' :
               d < 5 ? '#E0F13A' :
               d < 10 ? '#49DA7F' :
               d < 20 ? '#3507FF' :
                        '#07075F'
     }
+
+var getEQOpacity = function (t) {
+ return       t < 0 ? '1' :
+              t < 1 ? '0.9' :
+              t < 2 ? '0.75' :
+              t < 3 ? '0.6' :
+              t < 4 ? '0.4' :
+              t < 5 ? '0.2' :
+              t < 6 ? '0.1':
+                       '0.05'
+    }
+
  
 
     var icelandEQ6 = L.esri.featureLayer({
@@ -1268,27 +1293,51 @@ var getEQColor = function(d) {
        
     
       pointToLayer: function(geojson, latlng){
+      var html = '';
+for (var prop in geojson.properties){
+html += '<strong>'+prop+'<strong>: '+geojson.properties[prop]+'<br />';
+}
       return L.circle(latlng, 200*(geojson.properties.mag), {
-            fillOpacity: 0.4,
+            fillOpacity: 0.8*getEQOpacity(geojson.properties.time_elapsed),
             fillColor:getEQColor(geojson.properties.depth),
             color: getEQColor(geojson.properties.depth),
-            opacity: 1,
+            opacity: getEQOpacity(geojson.properties.time_elapsed),
           
-}).bindPopup(  'date: '
-              + geojson.properties.datetime
-              + '<br>'
-              + 'time elapsed: '
-              + geojson.properties.time_elapsed
-              + 'h'
-              + '<br>'  
-              + 'depth: '
-              + geojson.properties.depth
-              + '<br>'
-              + 'mag: '
-              + geojson.properties.mag
-            );  
+}).bindPopup(html);  
     }
     }).addTo(map)
+
+function getColor(c) {
+  return  c < 2.5 ? '#D80707' :
+              c < 5 ? '#E0F13A' :
+              c < 10 ? '#49DA7F' :
+              c < 20 ? '#3507FF' :
+                       '#07075F'
+}
+
+//create a legend control
+var legend = L.control({position: 'bottomleft'});
+
+
+//add the legend to the map
+legend.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend');
+      labels = ['<strong>EQ depths [km] </strong>'],
+      depths = [0, 2.5, 5, 10, 20];
+
+  // loop through our depth intervals and generate a label with a colored square for each interval
+  for (var i = 0; i < depths.length; i++) {
+    div.innerHTML +=
+     labels.push(
+        '<i style="background:' + getColor(depths[i] + 1) + '"></i> ' +
+        depths[i] + (depths[i + 1] ? '&ndash;' + depths[i+1] + '<br>' : '+'));
+  }
+    div.innerHTML = labels.join('<br>');
+  return div;
+};
+  legend.addTo(map);
+
+
 
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .className += ' fa fa-search';
