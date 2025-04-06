@@ -434,10 +434,10 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -446,7 +446,7 @@
                         <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -498,6 +498,9 @@
             });
             var popupContent = '<table>\
                     <tr>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -507,10 +510,7 @@
                         <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -562,19 +562,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -632,13 +632,13 @@
                         <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -690,19 +690,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Area [km²" colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -754,19 +754,19 @@
             });
             var popupContent = '<table>\
                     <tr>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="date start" colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="date end" colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -830,7 +830,7 @@
                         <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²]'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -894,7 +894,7 @@
                         <td class="visible-with-data" id="date end" colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td class="visible-with-data" id="Area [km²" colspan="2"><strong>Area [km²</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="Area [km²" colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -946,22 +946,22 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Location</strong><br />' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²]'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1013,22 +1013,22 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Location</strong><br />' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²]'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1080,22 +1080,22 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FID'] !== null ? autolinker.link(String(feature.properties['FID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Location</strong><br />' + (feature.properties['FID'] !== null ? autolinker.link(String(feature.properties['FID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>System</strong><br />' + (feature.properties['System'] !== null ? autolinker.link(String(feature.properties['System']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Erupt. Nr.</strong><br />' + (feature.properties['Erupt. Nr.'] !== null ? autolinker.link(String(feature.properties['Erupt. Nr.']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date start</strong><br />' + (feature.properties['date start'] !== null ? autolinker.link(String(feature.properties['date start']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>date end</strong><br />' + (feature.properties['date end'] !== null ? autolinker.link(String(feature.properties['date end']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Area [km²'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Area [km²]</strong><br />' + (feature.properties['Area [km²]'] !== null ? autolinker.link(String(feature.properties['Area [km²']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
