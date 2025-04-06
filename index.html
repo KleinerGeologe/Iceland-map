@@ -29,7 +29,7 @@
     height: 18px;
     float: left;
     margin-right: 8px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
         </style>
         <title>Iceland eruption series 2021 - 2025</title>
@@ -86,7 +86,7 @@
             }
         }
         var map = L.map('map', {
-            zoomControl:false, maxZoom:28, minZoom:1
+               zoomControl:false, zoomDelta: 0.25, zoomSnap: 0
         }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
@@ -1275,14 +1275,14 @@ var getEQColor = function(d) {
     }
 
 var getEQOpacity = function (t) {
- return       t < 0 ? '1' :
-              t < 1 ? '0.9' :
-              t < 2 ? '0.75' :
-              t < 3 ? '0.6' :
-              t < 4 ? '0.4' :
-              t < 5 ? '0.2' :
-              t < 6 ? '0.1':
-                       '0.05'
+ return       t <= 0 ? '1' :
+              t <= 1 ? '0.9' :
+              t <= 2 ? '0.75' :
+              t <= 3 ? '0.6' :
+              t <= 4 ? '0.45' :
+              t <= 5 ? '0.3' :
+              t <= 6 ? '0.2':
+                       '0.1'
     }
 
  
@@ -1290,14 +1290,16 @@ var getEQOpacity = function (t) {
     var icelandEQ6 = L.esri.featureLayer({
       url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/0',
       where:  "mag > 0",
-       
     
       pointToLayer: function(geojson, latlng){
-      var html = '';
-for (var prop in geojson.properties){
+var myDate = new Date(geojson.properties.start_time);
+var str = myDate.toDateString();
+     var html = '';
+      var arrayOfProps = ['OBJECTID','lat','lng','depth','mag','time_elapsed','datetime'];
+      arrayOfProps.forEach(function(prop) {
 html += '<strong>'+prop+'<strong>: '+geojson.properties[prop]+'<br />';
-}
-      return L.circle(latlng, 200*(geojson.properties.mag), {
+})
+      return L.circle(latlng, 200*(geojson.properties.mag)**1.2, {
             fillOpacity: 0.8*getEQOpacity(geojson.properties.time_elapsed),
             fillColor:getEQColor(geojson.properties.depth),
             color: getEQColor(geojson.properties.depth),
