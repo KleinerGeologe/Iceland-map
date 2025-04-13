@@ -1286,10 +1286,10 @@ var getEQOpacity = function (t) {
     }
 
  
+//===================================================================================================================================
+//Shortterm earthquake data
 
     var icelandEQ6 = L.esri.featureLayer({
- //     url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/1',
-//where: "time_elapsed < 10",
      url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/0',
 
     
@@ -1328,6 +1328,50 @@ html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
 }    
     }).addTo(map)
 
+//=====================================================================================================================================
+// Longterm EQ data (also contains Shortterm (<6h) data 
+
+    var icelandEQ6Long = L.esri.featureLayer({
+      url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/1',
+where: "time_elapsed < 12",
+      pointToLayer: function(feature, latlng){
+//var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
+var mag = feature.properties.mag;
+var radii;
+if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
+}
+else if (mag > -0.5) {radii=10;
+}
+else {radii = 5;
+}
+
+    let n = new Date(feature.properties.start_time);
+    var stringdate = n.toLocaleString("en-GB");
+
+     var html = '';
+      var arrayOfProps = ['OBJECTID','lat','lng','depth','mag','time_elapsed'];
+      arrayOfProps.forEach(function(prop) {
+html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
+})
+
+    
+ return L.circleMarker(latlng,{ 
+            radius: radii, 
+            fillOpacity: 0.8*getEQOpacity(feature.properties.time_elapsed),
+            fillColor:getEQColor(feature.properties.depth),
+            color: getEQColor(feature.properties.depth),
+            opacity: getEQOpacity(feature.properties.time_elapsed),
+            weight: 2,
+          
+}).bindPopup(html
+             +"<strong>Date :</strong>" 
+             +stringdate);
+}    
+    }).addTo(map)
+
+//=====================================================================================================================================
+// EQ Legend
+
 function getColor(c) {
   return  c < 2.5 ? '#D80707' :
               c < 5 ? '#E0F13A' :
@@ -1365,8 +1409,10 @@ legend.onAdd = function (map) {
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
+        {label: '<b>Earthquakes</b>',selectAllCheckbox: true, collapsed: true, children: [
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h', layer: icelandEQ6},
-            {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
+            {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h long', layer: icelandEQ6Long},]},
+            //{label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
             {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Svartsengi-Fagradallsfjall lava fissure', layer: layer_GossprungureldgosiReykjanesi_17},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
@@ -1382,7 +1428,7 @@ legend.onAdd = function (map) {
             {label: '<img src="legend/Svartsengi20240208_8.png" /> Svartsengi 2024.02.08', layer: layer_Svartsengi20240208_8},
             {label: '<img src="legend/Svartsengi20240114_7.png" /> Svartsengi 2024.01.14', layer: layer_Svartsengi20240114_7},
             {label: '<img src="legend/Svartsengi20231218_6.png" /> Svartsengi 2023.12.18', layer: layer_Svartsengi20231218_6},]},
-        {label: '<b>Iceland Geology</b>', selectAllCheckbox: true, children: [
+        {label: '<b>Iceland Geology</b>', selectAllCheckbox: true, collapsed: true, children: [
             {label: 'Faults, Reykjanes<br /><table><tr><td style="text-align: center;"><img src="legend/FaultsReykjanes_5_small0.png" /></td><td>small</td></tr><tr><td style="text-align: center;"><img src="legend/FaultsReykjanes_5_large1.png" /></td><td>large</td></tr><tr><td style="text-align: center;"><img src="legend/FaultsReykjanes_5_2.png" /></td><td></td></tr></table>', layer: layer_FaultsReykjanes_5},
             {label: '<img src="legend/Postglacialfissurescraters_4.png" /> Postglacial fissures & craters', layer: layer_Postglacialfissurescraters_4},
             {label: 'Postglacial lavas<br /><table><tr><td style="text-align: center;"><img src="legend/Postglaciallavas_3_Prehistoriclavas0.png" /></td><td>Pre-historic lavas</td></tr><tr><td style="text-align: center;"><img src="legend/Postglaciallavas_3_Historiclavas1.png" /></td><td>Historic lavas</td></tr></table>', layer: layer_Postglaciallavas_3},]},
