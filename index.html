@@ -1297,11 +1297,11 @@ var getEQOpacity = function (t) {
 //var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
 var mag = feature.properties.mag;
 var radii;
-if (mag > 0) { radii = 200*((feature.properties.mag)**1.2);
+if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
 }
 else if (mag > -0.5) {radii=10;
 }
-else {radii = 7;
+else {radii = 5;
 }
 
     let n = new Date(feature.properties.start_time);
@@ -1314,11 +1314,13 @@ html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
 })
 
     
- return L.circle(latlng, radii, {
+ return L.circleMarker(latlng,{ 
+            radius: radii, 
             fillOpacity: 0.8*getEQOpacity(feature.properties.time_elapsed),
             fillColor:getEQColor(feature.properties.depth),
             color: getEQColor(feature.properties.depth),
             opacity: getEQOpacity(feature.properties.time_elapsed),
+            weight: 2,
           
 }).bindPopup(html
              +"<strong>Date :</strong>" 
