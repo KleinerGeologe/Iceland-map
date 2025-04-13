@@ -86,7 +86,7 @@
             }
         }
         var map = L.map('map', {
-               zoomControl:false, zoomDelta: 0.25, zoomSnap: 0
+               zoomControl:false, zoomDelta: 0.25, zoomSnap: 0, minZoom: 1, maxZoom:20,
         }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
@@ -1288,25 +1288,38 @@ var getEQOpacity = function (t) {
  
 
     var icelandEQ6 = L.esri.featureLayer({
-      url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/0',
-      where:  "mag > 0",
+ //     url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/1',
+//where: "time_elapsed < 10",
+     url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/0',
+
     
-      pointToLayer: function(geojson, latlng){
-var myDate = new Date(geojson.properties.start_time);
-var str = myDate.toDateString();
+      pointToLayer: function(feature, latlng){
+
+
+//var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
+var mag = feature.properties.mag;
+var radii;
+if (mag > 0) { radii = 200*((feature.properties.mag)**1.2);
+}
+else if (mag > -0.5) {radii=10;
+}
+else {radii = 7;
+}
+
      var html = '';
       var arrayOfProps = ['OBJECTID','lat','lng','depth','mag','time_elapsed','datetime'];
       arrayOfProps.forEach(function(prop) {
-html += '<strong>'+prop+'<strong>: '+geojson.properties[prop]+'<br />';
+html += '<strong>'+prop+'<strong>: '+feature.properties[prop]+'<br />';
 })
-      return L.circle(latlng, 200*(geojson.properties.mag)**1.2, {
-            fillOpacity: 0.8*getEQOpacity(geojson.properties.time_elapsed),
-            fillColor:getEQColor(geojson.properties.depth),
-            color: getEQColor(geojson.properties.depth),
-            opacity: getEQOpacity(geojson.properties.time_elapsed),
+     
+ return L.circle(latlng, radii, {
+            fillOpacity: 0.8*getEQOpacity(feature.properties.time_elapsed),
+            fillColor:getEQColor(feature.properties.depth),
+            color: getEQColor(feature.properties.depth),
+            opacity: getEQOpacity(feature.properties.time_elapsed),
           
-}).bindPopup(html);  
-    }
+}).bindPopup(html);
+}    
     }).addTo(map)
 
 function getColor(c) {
@@ -1349,7 +1362,7 @@ legend.onAdd = function (map) {
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h', layer: icelandEQ6},
             {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
-            {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Gossprungur, eldgosið á Reykjanesi', layer: layer_GossprungureldgosiReykjanesi_17},
+            {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Svartsengi-Fagradallsfjall lava fissure', layer: layer_GossprungureldgosiReykjanesi_17},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/LitliHrutur20230820_16.png" /> Litli Hrutur 20230820', layer: layer_LitliHrutur20230820_16},
             {label: '<img src="legend/Meradalir20220816_15.png" /> Meradalir 20220816', layer: layer_Meradalir20220816_15},
