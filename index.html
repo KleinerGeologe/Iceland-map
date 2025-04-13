@@ -1309,7 +1309,7 @@ else {radii = 7;
      var html = '';
       var arrayOfProps = ['OBJECTID','lat','lng','depth','mag','time_elapsed','datetime'];
       arrayOfProps.forEach(function(prop) {
-html += '<strong>'+prop+'<strong>: '+feature.properties[prop]+'<br />';
+html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
 })
      
  return L.circle(latlng, radii, {
