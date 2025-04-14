@@ -1297,11 +1297,11 @@ var getEQOpacity = function (t) {
 //var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
 var mag = feature.properties.mag;
 var radii;
-if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
+if (mag > 0) { radii = 5*((feature.properties.mag+1)**1.2);
 }
-else if (mag > -0.5) {radii=10;
+else if (mag > -0.5) {radii=5;
 }
-else {radii = 5;
+else {radii = 2.5;
 }
 
     let n = new Date(feature.properties.start_time);
@@ -1333,16 +1333,16 @@ html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
 
     var icelandEQ6Long = L.esri.featureLayer({
       url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/1',
-where: "time_elapsed < 12",
+where: "time_elapsed < 10",
       pointToLayer: function(feature, latlng){
 //var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
 var mag = feature.properties.mag;
 var radii;
-if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
+if (mag > 0) { radii = 5*((feature.properties.mag+1)**1.2);
 }
-else if (mag > -0.5) {radii=10;
+else if (mag > -0.5) {radii=5;
 }
-else {radii = 5;
+else {radii = 2.5;
 }
 
     let n = new Date(feature.properties.start_time);
