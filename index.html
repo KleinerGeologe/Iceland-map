@@ -89,12 +89,6 @@
                zoomControl:false, zoomDelta: 0.25, zoomSnap: 0, minZoom: 1, maxZoom:20,
         }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
 		
-		L.control.scale({
-			metric: true,
-			maxWidth: 100,
-			position: bottomright,
-		}).addto(map);
-		
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://qgis.org">QGIS</a> &middot; <a href="https://gis.natt.is/geoserver/web/?0" title="Natural Science Institute of Iceland"> Natt.is<a/>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -1408,7 +1402,12 @@ legend.onAdd = function (map) {
   return div;
 };
   legend.addTo(map);
-
+		
+		L.control.scale({
+			metric: true,
+			maxWidth: 100,
+			position: bottomright,
+		}).addTo(map);
 
 
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
