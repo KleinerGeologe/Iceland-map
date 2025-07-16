@@ -67,6 +67,7 @@
         <script src="data/LitliHrutur20230820_16.js"></script>
         <script src="data/GossprungureldgosiReykjanesi_17.js"></script>
         <script src="data/Fissure20250401_18.js"></script>
+        <script src="data/fissure9_19.js"></script>
 
 
         <script>
@@ -1220,7 +1221,7 @@
                 pane: 'pane_Fissure20250401_18',
                 opacity: 1,
                 color: 'rgba(179,15,68,1.0)',
-                dashArray: '12.0,6.0',
+                dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
                 weight: 3.0,
@@ -1242,10 +1243,61 @@
         });
         bounds_group.addLayer(layer_Fissure20250401_18);
         map.addLayer(layer_Fissure20250401_18);
-        map.createPane('pane_INSPIREGeographicalNamesgnIceland_19');
-        map.getPane('pane_INSPIREGeographicalNamesgnIceland_19').style.zIndex = 419;
-        var layer_INSPIREGeographicalNamesgnIceland_19 = L.WMS.layer("https://gis.lmi.is/geoserver/wms", "INSPIRE:INSPIRE_GeographicalNames", {
-            pane: 'pane_INSPIREGeographicalNamesgnIceland_19',
+
+       function pop_fissure9_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_fissure9_19_0() {
+            return {
+                pane: 'pane_fissure9_19',
+                opacity: 1,
+                color: 'rgba(179,15,68,1.0)',
+                dashArray: '12.0,6.0',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_fissure9_19');
+        map.getPane('pane_fissure9_19').style.zIndex = 418;
+        map.getPane('pane_fissure9_19').style['mix-blend-mode'] = 'normal';
+        var layer_fissure9_19 = new L.geoJson(json_fissure9_19, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_fissure9_19',
+            layerName: 'layer_fissure9_19',
+            pane: 'pane_fissure9_19',
+            onEachFeature: pop_fissure9_19,
+            style: style_fissure9_19_0,
+        });
+        bounds_group.addLayer(layer_fissure9_19);
+        map.addLayer(layer_fissure9_19);
+        map.createPane('pane_INSPIREGeographicalNamesgnIceland_20');
+        map.getPane('pane_INSPIREGeographicalNamesgnIceland_20').style.zIndex = 419;
+        var layer_INSPIREGeographicalNamesgnIceland_20 = L.WMS.layer("https://gis.lmi.is/geoserver/wms", "INSPIRE:INSPIRE_GeographicalNames", {
+            pane: 'pane_INSPIREGeographicalNamesgnIceland_20',
             format: 'image/png',
             uppercase: true,
             transparent: true,
@@ -1256,7 +1308,7 @@
             identify: false,
             attribution: '',
         });
-        map.addLayer(layer_INSPIREGeographicalNamesgnIceland_19);
+        map.addLayer(layer_INSPIREGeographicalNamesgnIceland_20);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1294,14 +1346,14 @@ var getEQOpacity = function (t) {
 
     
       pointToLayer: function(feature, latlng){
-//var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
+//var radii = Math.pow(2, quake.size)* 5;
 var mag = feature.properties.mag;
 var radii;
-if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
+if (mag > 0) { radii = 5*((feature.properties.mag+1)**1.2);
 }
-else if (mag > -0.5) {radii=10;
+else if (mag > -0.5) {radii=5;
 }
-else {radii = 5;
+else {radii = 2.5;
 }
 
     let n = new Date(feature.properties.start_time);
@@ -1333,16 +1385,16 @@ html += '<strong>'+prop+'</strong>: '+feature.properties[prop]+'<br />';
 
     var icelandEQ6Long = L.esri.featureLayer({
       url: 'https://luk.vedur.is/arcgis/rest/services/skjalftar/skjalftar_isn93/FeatureServer/1',
-where: "time_elapsed < 12",
+where: "time_elapsed < 10",
       pointToLayer: function(feature, latlng){
 //var radii = (Math.pow(feature.properties.mag,1.2) / 2) * 10;
 var mag = feature.properties.mag;
 var radii;
-if (mag > 0) { radii = 7*((feature.properties.mag)**1.2);
+if (mag > 0) { radii = 5*((feature.properties.mag+1)**1.2);
 }
-else if (mag > -0.5) {radii=10;
+else if (mag > -0.5) {radii=5;
 }
-else {radii = 5;
+else {radii = 2.5;
 }
 
     let n = new Date(feature.properties.start_time);
@@ -1409,10 +1461,11 @@ legend.onAdd = function (map) {
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var overlaysTree = [
-        {label: '<b>Earthquakes</b>',selectAllCheckbox: true, collapsed: true, children: [
+        {label: '<b>Earthquakes</b>',selectAllCheckbox: true, collapsed: true, children: [           
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h', layer: icelandEQ6},
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h long', layer: icelandEQ6Long},]},
-            //{label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
+//            {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
+            {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.07.16', layer: layer_fissure9_19},
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
             {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Svartsengi-Fagradallsfjall lava fissure', layer: layer_GossprungureldgosiReykjanesi_17},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
