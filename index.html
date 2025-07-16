@@ -88,11 +88,10 @@
             }
         }
         var map = L.map('map', {
-               zoomControl:false, zoomDelta: 0.25, zoomSnap: 0, minZoom: 5, maxZoom:20,
+               zoomControl:false, zoomDelta: 0.25, zoomSnap: 0, minZoom: 1, maxZoom:20,
         }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
-		
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://qgis.org">QGIS</a> &middot; <a href="https://gis.natt.is/geoserver/web/?0" title="Natural Science Institute of Iceland"> Natt.is<a/>');
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
@@ -1526,7 +1525,8 @@ legend.onAdd = function (map) {
     div.innerHTML = labels.join('<br>');
   return div;
 };
-  legend.addTo(map);	
+  legend.addTo(map);
+
 
 
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
@@ -1536,16 +1536,11 @@ legend.onAdd = function (map) {
         var overlaysTree = [
         {label: '<b>Earthquakes</b>',selectAllCheckbox: true, collapsed: true, children: [           
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h', layer: icelandEQ6},
-<<<<<<< HEAD
             {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 6h long', layer: icelandEQ6Long},]},
 //            {label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.07.16', layer: layer_fissure9_19},
-=======
-            {label: '<img src="legend/icelandEQ6.png" /> Iceland Earthquakes 10h', layer: icelandEQ6Long},]},
-            //{label: "INSPIRE Geographical Names (gn) Iceland", layer: layer_INSPIREGeographicalNamesgnIceland_19},
->>>>>>> 57c2e3d4b9afa34fe2d600f49cbccd07504bbfb8
             {label: '<img src="legend/Fissure20250401_18.png" /> Fissure 2025.04.01', layer: layer_Fissure20250401_18},
-            {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Svartsengi-Fagradallsfjall eruption fissure', layer: layer_GossprungureldgosiReykjanesi_17},
+            {label: '<img src="legend/GossprungureldgosiReykjanesi_17.png" /> Svartsengi-Fagradallsfjall lava fissure', layer: layer_GossprungureldgosiReykjanesi_17},
         {label: '<b>Fagradalsfjall 2021-2023</b>', selectAllCheckbox: true, children: [
             {label: '<img src="legend/LitliHrutur20230820_16.png" /> Litli Hrutur 20230820', layer: layer_LitliHrutur20230820_16},
             {label: '<img src="legend/Meradalir20220816_15.png" /> Meradalir 20220816', layer: layer_Meradalir20220816_15},
