@@ -94,7 +94,8 @@
                zoomControl:false, zoomDelta: 0.25, zoomSnap: 0, minZoom: 1, maxZoom:20,
         }).fitBounds([[63.84854056655973,-22.439451905737915],[63.86303709868899,-22.369759329654304]]);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a> &middot;  ÍslandsDEM,</> <a href="https://gis.lmi.is/geoserver">Hraun Reykjaneselda by</a> <a href="https://www.natt.is/en" title="National Science Institute of Iceland">NÁTT</a>')        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a> &middot;  ÍslandsDEM,</> <a href="https://gis.lmi.is/geoserver">Hraun Reykjaneselda by</a> <a href="https://www.natt.is/en" title="National Science Institute of Iceland">NÁTT</a>')        
+		var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
          var tempDiv = document.createElement('div');
